@@ -9,7 +9,13 @@ const CartItem = ({ onContinueShopping }) => {
 
   // Calculate total amount for all products in the cart
   const calculateTotalAmount = () => {
- 
+        let totalCost = 0;
+        if (section === "plants") {
+          addItems.forEach((item) => {
+            totalCost += item.cost * item.quantity;
+          });
+
+        return totalCost;
   };
 
   const handleContinueShopping = (e) => {
@@ -31,6 +37,10 @@ const CartItem = ({ onContinueShopping }) => {
   // Calculate total cost based on quantity for an item
   const calculateTotalCost = (item) => {
   };
+
+  const handleCheckoutShopping = (e) => {
+  alert('Functionality to be added for future reference');
+    };
 
   return (
     <div className="cart-container">
@@ -62,7 +72,5 @@ const CartItem = ({ onContinueShopping }) => {
     </div>
   );
 };
-
+};
 export default CartItem;
-
-
